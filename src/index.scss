@@ -1,0 +1,86 @@
+///import style files
+@use './style/variables' as * ;
+@use './style/global-rols' as * ;
+////////////////// the frist project ////////////////// 
+.container {
+    width: $container-width-lg;
+    margin: 0 auto;
+}
+
+section  {
+    margin-top: 9rem;
+    & > h1, h4 {
+    text-align: center;
+    color: $color-primary;
+    }
+    & > h1 {
+    margin-bottom: 3rem; 
+    } 
+}
+
+h1,h2,h3,h4,h5 {
+    font-weight: 500;
+}
+h1 {
+    font-size: 2.5rem;
+}
+
+.text-light {
+    color: $color-light;
+}
+
+a {
+    color: $color-primary;
+    transition: $transition;
+    &:hover {
+    color: $color-white;
+    } 
+}
+.btn {
+    width: max-content;
+    display: inline-block;
+    color: $color-primary;
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 1px solid $color-primary;
+    transition: $transition;
+    &:hover {
+        background: $color-white;
+        color: $color-bg;
+        border-color: transparent;
+    }
+}
+.btn-primary {
+    background: $color-primary;
+    color: $color-bg;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+/*==================== MADIA QUERIES (MUDIUM DEVICES) ===================*/
+@media screen and (max-width: 1024px) {
+    .container {
+        width: $container-width-md;
+    }
+    section {
+        margin-top: 6rem;
+    }
+};
+/*==================== MADIA QUERIES (SMALL DEVICES) ===================*/;
+@media screen and (max-width: 600px) {
+    .container {
+        width: $container-width-sm;
+    }
+    section {
+        margin-bottom: 2rem;
+    }
+}
+  
+
+
+
+

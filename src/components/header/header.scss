@@ -1,0 +1,133 @@
+/// import variables
+@use '../../style/variables' as *;
+/// import mixin
+@use '../../style/mixin' as * ;
+
+header {
+    display: flex;
+    align-items: center;
+    padding-top: 7rem;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.header_container {
+    // text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    left: 0;
+    top: -175px;
+    height: 100%;
+    position: relative;
+}
+/*==================== CTA ====================*/
+.cta {
+    left: 0;
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+/*==================== SOCIALS ====================*/
+.header_socials {
+    font-size: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    position: absolute;
+    left: 0;
+    bottom: 3rem;
+    &::after {
+    content: "";
+        width: 1.5px;
+        height: 3rem;
+        background: $color-primary;
+    }
+}
+/*==================== SOCIALS ====================*/
+.me {
+    background: linear-gradient( $color-primary, transparent);
+    width: 22rem;
+    height: 32rem;
+    position: absolute;
+    left: calc(70%);
+    margin-top: 4rem;
+    border-radius: 12rem 12rem 0 0;
+    overflow: hidden;
+    padding: 3.5rem 1.5rem 1.5rem 1.5rem;
+}
+.img {
+    width: 360px;
+    height: 470px;
+    position: absolute;
+    right: 10px;
+    top: 30px;
+ }
+/*==================== SOCROLL DOWN ====================*/
+.scroll_down {
+    position: absolute;
+    right: -2.3rem;
+    bottom: 7rem;
+    transform: rotate(90deg);
+    font-weight: 300;
+    font-size: 1rem;
+}
+/*============================ nav =============================*/
+.anvbar {
+    position: relative;
+}
+nav {
+    background: rgba(0,0,0,0.2);
+    width: max-content;
+    display: block;
+    z-index: 2;
+    padding: 0.7rem 1.7rem;
+    position: absolute;
+    // position: fixed;
+    left: 73.5%;
+    top: 200px;
+    // bottom: 100px;
+    transform: translateX(-50%);
+    bottom: 2rem;
+    display: flex;
+    gap: 0.7rem;
+    border-radius: 3rem;
+    backdrop-filter: blur(15px); 
+    & a {
+    background: transparent;
+    padding: 0.7rem;
+    border-radius: 50%;
+    display: flex;
+    color: $color-light;
+    font-size: 1.4rem;
+        & a:hover {
+        background: rgba(0, 0, 0, 0.4);
+        }
+    }
+    & a.active {
+    background: $color-primary;
+    color: $color-bg;
+}
+}
+/*==================== MADIA QUERIES (MUDIUM DEVICES) ===================*/
+header {
+    @include breackpoints (small){
+        height: 78vh;
+    }
+}
+/*==================== MADIA QUERIES (SMALL DEVICES) ===================*/
+header {
+    @include breackpoints(mobile) {
+        height: 100vh;
+        .header_socials, .scroll_down {
+            display: none;
+        }
+    }
+}
+
+
+
+

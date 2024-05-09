@@ -1,0 +1,19 @@
+@mixin breackpoints ($point) {
+    @if $point == mobile {
+        @media (max-width: 600px) {
+            @content;
+        }
+    }@else if $point == small {
+        @media (max-width: 1024px) {
+             @content;
+        }
+    }@else if $point == medium {
+        @media (max-width: 1300px) {
+             @content;
+        }
+    }@else if $point == large {
+        @media (max-width: 1400px) {
+             @content;
+        }
+    }
+}

@@ -1,0 +1,73 @@
+/// import variables
+@use '../../style/variables' as *;
+/// import mixin
+@use '../../style/mixin' as * ;
+
+footer {
+    background: $color-primary;
+    padding: 3rem 0;
+    text-align: center;
+    margin-top: 7rem;
+    font-size: 1rem;
+    & a {
+    color: $color-bg;
+    }
+}
+
+.footer__logo {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.permalinks {
+    font-size: 1.1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0 auto 3rem;
+}
+.footer__socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    & a {
+    background: $color-bg;
+    color: $color-white;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    display: flex;
+    border: 1px solid transparent;
+    font-size: 1.5rem;
+        &:hover {
+        background: transparent;
+        color: $color-bg;
+        border-color: $color-bg;
+        }
+    }
+}
+
+.footer__cobyright {
+    margin-bottom: 4rem;
+    color: $color-bg;
+    font-size: 1rem;
+}
+/*====================== madia ========================*/
+footer {
+    @include breackpoints (mobile) {
+        .permalinks {
+            flex-direction: column;
+            gap: 1.5rem;
+    }
+        .footer__socials {
+            margin-bottom: 2.5rem;
+        }
+    }
+}
+
+
+
+

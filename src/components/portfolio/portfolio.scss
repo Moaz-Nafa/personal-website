@@ -1,0 +1,71 @@
+/// import variables
+@use '../../style/variables' as *;
+/// import mixin
+@use '../../style/mixin' as * ;
+
+.portfolio__container{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 2rem;
+    width: 85%;
+}
+
+.portfolio__item {
+    background: $color-bg-variant;
+    padding: 1.3rem;
+    border-radius: 2rem;
+    border: 2px solid transparent;
+    transition: $transition;
+    &:hover {
+    border-color: $color-bg-variant;
+    background: transparent;
+    }
+}
+
+.portfolio__item-img {
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+.portfolio__item h3 {
+    margin: 0.8rem 0 2rem;
+}
+
+.portfolio__item-cta {
+    position: relative;
+    align-items: center;
+    margin-bottom: 0.6rem;
+}
+.btn-Github {
+    margin-right: 10px;
+    margin-bottom: 5px;
+ }
+/*==================== MADIA QUERIES (MUDIUM DEVICES) ===================*/
+section {
+    @include breackpoints (large) {
+        .portfolio__container {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.2rem;
+        }
+    }
+}
+section {
+    @include breackpoints (small) {
+        .portfolio__container {
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        } 
+    }
+}
+/*==================== MADIA QUERIES (SMALL DEVICES) ===================*/
+section {
+    @include breackpoints (mobile) {
+        .portfolio__container {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    } 
+}
+
+
+
+
